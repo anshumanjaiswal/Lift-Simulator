@@ -1,0 +1,34 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --font-primary: "Bebas Neue", cursive;
+  --font-secondary: "Inter", sans-serif;
+  --color-dark-800: #212529;
+  --color-gray-400: #dddddd;
+  --base-transition: 0.4s ease;
+  --radius-10: 10px;
+  --color-purple-600: #7c27ce;
+  --color-light-100: #fff;
+}
+
+.firstPage{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  transition: var(--base-transition);
+}
+
+.simulateButton{
+  padding: 2px 2px;
+  font-size: 1rem;
+  font-family: var(--font-secondary);
+  border: 2px solid var(--color-dark-800);
+  border-radius: var(--radius-10);
+  cursor: pointer;
+  transition: var(--base-transition);
+}
