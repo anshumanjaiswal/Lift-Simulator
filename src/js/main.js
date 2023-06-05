@@ -197,5 +197,39 @@ function moveLift(liftno, floorNo, oldFloorValue) {
  let prev = `${2 * Math.abs(floorNo - oldFloorValue)}s`
  liftno.style.transitionDuration = prev;
 
+ setTimeout(() => {
+  gateopenclose(liftno);
+  setTimeout(() => {
+    liftno.setAttribute('flag', 'free');
+  }, 5500);
+  console.log(liftno.getAttribute('flag'))
+ }, 2*Math.abs(floorNo - oldFloorValue) * 1000)
 
+}
+
+function gateopenclose(liftno) {
+  let gates = liftno.firstChild;
+  let gate1 = document.querySelector('.gate1');
+  let gate2 = document.querySelector('.gate2');
+
+  setTimeout(() => {
+    gates.children[0].style.width = '3px';
+    gates.children[1].style.width = '3px';
+  }, 1000);
+
+  setTimeout(() => {
+    gates.children[0].style.width = '25px';
+    gates.children[1].style.width = '25px';
+
+  }, 3500);
+
+}
+
+function deleteFloors() {
+  let floorInput = document.querySelector('#floorNumber').value;
+
+  for(let i = floorInput; i > 0; i--) {
+    let floordiv = document.querySelector('.box');
+    floordiv.remove();
+  }
 }
